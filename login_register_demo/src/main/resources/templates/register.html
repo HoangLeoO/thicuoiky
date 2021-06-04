@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/register.css" rel="stylesheet" type="text/css"/>
+    <title>Đăng ký tài khoảng</title>
+</head>
+<body>
+<main>
+    <div class="container">
+        <div class="register-form">
+<form method="post" th:action="@{/register}" th:object="${user}">
+<!--    <div class="container">-->
+        <h1>Đăng Ký</h1>
+        <hr>
+        <p  th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}">Name Error</p>
+        <label for="userName"><b> Tên Tài Khoảng</b></label>
+        <input type="text" placeholder=" Tên Tài Khoảng" name="userName" id="userName" th:field="*{userName}" required>
+
+        <p  th:if="${#fields.hasErrors('passWord')}" th:errors="*{passWord}">Name Error</p>
+        <label for="psw"><b>Mật Khẩu</b></label>
+        <input type="password" placeholder="Mật Khẩu" name="psw" th:field="*{passWord}" id="psw" required>
+
+
+        <p  th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</p>
+        <label for="name"><b>Tên người dùng</b></label>
+        <input type="text" placeholder="Tên Người Dùng" name="name" id="name" th:field="*{name}" required>
+
+        <p  th:if="${#fields.hasErrors('address')}" th:errors="*{address}">Name Error</p>
+        <label for="address"><b> Địa Chỉ</b></label>
+        <input type="text" placeholder=" Địa Chỉ " name="address" id="address" th:field="*{address}" required>
+
+        <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Name Error</p>
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Email" name="psw" th:field="*{email}" id="email" required>
+
+        <p  th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}">Name Error</p>
+        <label for="phone"><b>Số điện thoại</b></label>
+        <input type="text" placeholder="Số điện thoại" name="phone" th:field="*{phoneNumber}" id="phone" required>
+
+
+        <button type="submit" class="registerbtn">Đăng Ký</button>
+<!--    </div>-->
+
+    <div class="container signin">
+        <p>Bạn đã có tài khoảng ? </p><a th:href="@{/login}">Đăng Nhập</a>
+    </div>
+</form>
+        </div>
+    </div>
+</main>
+</body>
+</html>

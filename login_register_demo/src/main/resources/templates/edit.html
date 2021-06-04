@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cập Nhập</title>
+</head>
+<body>
+<form th:action="@{/edit}" method="post" th:object="${user}">
+    <label for="name"><b>Tên người dùng</b></label>
+    <input type="text" placeholder="Tên Người Dùng" name="name" id="name" th:field="*{name}" required>
+
+    <label for="address"><b> Địa Chỉ</b></label>
+    <input type="text" placeholder=" Địa Chỉ " name="address" id="address" th:field="*{address}" required>
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Email" name="psw" th:field="*{email}" id="email" required>
+
+    <label for="phone"><b>Số điện thoại</b></label>
+    <input type="text" placeholder="Số điện thoại" name="phone" th:field="*{phoneNumber}" id="phone" required>
+
+
+    <button type="submit" class="registerbtn">Cập Nhập</button>
+</form>
+</body>
+</html>

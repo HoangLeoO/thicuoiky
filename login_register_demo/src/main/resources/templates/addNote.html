@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/register.css" rel="stylesheet" type="text/css"/>
+    <title>Đăng ký tài khoảng</title>
+</head>
+<body>
+<main>
+    <div class="container">
+        <div class="register-form">
+            <form method="post" th:action="@{/addNote}" th:object="${note}">
+                <!--    <div class="container">-->
+                <h1>Tạo Ghi Chú</h1>
+                <hr>
+                <label for="tile"><b> Tên Tiêu Đề</b></label>
+                <input type="text" placeholder=" Tên Tiêu Đề" name="tile" id="tile" th:field="*{tile}" required>
+
+
+                <label for="content"><b>Nội Dung</b></label>
+                <input type="text" placeholder="Nội Dung" name="content" th:field="*{content}" id="content" required>
+
+                <button type="submit" class="registerbtn">Thêm</button>
+                <!--    </div>-->
+
+                <div class="container signin">
+                    <a th:href="@{/home}">Trở Về</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+</body>
+</html>

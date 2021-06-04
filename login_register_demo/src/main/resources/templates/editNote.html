@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/editNote}" method="post" th:object="${note}">
+    <table>
+        <tr>
+            <td>Tiêu đề</td>
+            <td><input type="text" th:field="*{tile}"></td>
+        </tr>
+        <tr>
+            <td>Nội Dung</td>
+            <td><input type="text" th:field="*{content}"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button type="submit">Cập Nhập</button> </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
