@@ -32,6 +32,10 @@ public class UserController {
     @Autowired
     UserEntityReporisoty userRepository;
 
+    @GetMapping("/")
+    public  String showViews(){
+        return "/views";
+    }
 
     @GetMapping("/login")
     public  String showFromLogin(){
